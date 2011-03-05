@@ -1,11 +1,5 @@
 # Create your views here.
 
-from django.http import HttpResponse
-from django.http import Http404
-from django.shortcuts import render_to_response
-from polls.models import Poll
-from django.template import RequestContext
-
 from django.shortcuts import get_object_or_404, render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
@@ -47,4 +41,5 @@ def vote(request, poll_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls.views.results', args=(p.id,)))
+
 
